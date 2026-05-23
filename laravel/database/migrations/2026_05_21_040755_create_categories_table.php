@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string('color', 7);
-            $table->foreignId('user_id')->constrained();
+            $table->string('color')->nullable()->default('8366ff');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
